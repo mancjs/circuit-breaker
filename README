@@ -1,0 +1,26 @@
+Introduction
+
+This repo is a bare-bones version of a broker.
+Your broker must be deployed to a public URL on Heroku.
+
+Prerequisites
+
+1. Heroku account (see below)
+2. node + npm
+3. git
+
+Deploying to Heroku
+
+1. Create an account at https://www.heroku.com
+2. Follow the setup instructions here: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+3. On the command line, run `herkou create`.
+4. Deploy by pushing to the heroku remote (created by the command above), i.e. `git push heroku master`.
+5. Your public URL will be output to the command line after the push.
+
+Structure
+
+server.js is a simple Express API. It contains two functions, `initialiseMines` which creates the list
+of Mine objects representing the server endpoints, and `listMines` which queries the mines passed to it
+in parallel to fetch the complete list of resources, or an error if *any* of them fail.
+
+circuit-breaker.js and mine.js are the current default implementations.
